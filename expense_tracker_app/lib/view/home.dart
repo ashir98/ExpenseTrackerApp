@@ -1,4 +1,6 @@
+import 'package:expense_tracker_app/widgets/add_button.dart';
 import 'package:expense_tracker_app/widgets/top_card.dart';
+import 'package:expense_tracker_app/widgets/transaction_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,6 +18,7 @@ class HomePage extends StatelessWidget {
 
       body: Column(
         children: [
+
           TopNeuCard(
             balance: "\$10,000",
             income: "\$5,000",
@@ -24,20 +27,26 @@ class HomePage extends StatelessWidget {
 
           Expanded(
             child: Container(
-              color: Colors.blue[100],
-              child: const Center(
-                child: Text("CENTER"),
+              child:  Center(
+                child: Column(
+                  children: [
+                    TransactionTile(
+                      transactionName: "Shopping",
+                      amout: "1000",
+                      incomeOrexpense: "expense",
+                    ),
+                  
+                  ],
+                ),
               ),
             ),
           ),
 
 
-          Container(
-            height: 25,
-            child: const Center(
-              child: Text("BOTTOM"),
-            ),
-          ),
+          AddButton()
+
+
+          
         ],
       ),
     );
